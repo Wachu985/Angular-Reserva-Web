@@ -1,0 +1,30 @@
+<div class="container" style="padding-top: 50px;">
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    
+    <div class="col" *ngFor="let hotel of hoteles">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">{{hotel.nombre}}</h4>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title pricing-card-title">{{hotel.fecha}}</h3>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Precio de los Adultos: {{hotel.precioadult}}</li>
+            <li>Precio de los Niños: {{hotel.precioninos}}</li>
+            <li>Disponibilidad: {{hotel.disponibilidad}}</li>
+            <li [ngSwitch]="hotel.stars">
+              <div *ngSwitchCase=1>⭐</div>
+              <div *ngSwitchCase=2>⭐⭐</div>
+              <div *ngSwitchCase=3>⭐⭐⭐</div>
+              <div *ngSwitchCase=4>⭐⭐⭐⭐</div>
+              <div *ngSwitchCase=5>⭐⭐⭐⭐⭐</div>
+              <div *ngSwitchDefault>⭐</div>
+            </li>
+          </ul>
+          <a routerLink="/add/{{hotel.id}}" type="button" class="w-100 btn btn-lg btn-outline-primary">Reservar</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

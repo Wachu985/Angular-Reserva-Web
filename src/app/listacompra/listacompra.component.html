@@ -1,0 +1,30 @@
+<div class="container" style="padding-top: 60px;">
+  <div class="card" *ngIf="listaCompra.length>0" >
+    <div class="card-header">
+      Lista de Compras
+    </div>
+    <div class="card-body">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Hotel</th>
+            <th>Fecha</th>
+            <th>Adultos</th>
+            <th>Niños</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let compra of listaCompra">
+              <td>{{compra.hotel.nombre}}</td>
+              <td>{{compra.hotel.fecha}}</td>
+              <td>{{compra.adultos}}</td>
+              <td>{{compra.ninos}}</td>
+              <td>{{compra.total}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="listaCompra.length==0" class="text-center"><h2>No Existen Reservas en la Lista</h2></div>
+</div>
