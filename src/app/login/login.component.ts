@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     if(this.formLogin.invalid) return 
     const {email,password}= this.formLogin.value;
     console.log(email,password)
+    
     if(this.loginServices.login(email,password)) this.router.navigate(['/dashboard'])
   }
 
